@@ -1,0 +1,6 @@
+PyQt5
+api_handler
+PyQt5 mss pillow aiohttp
+pyinstaller
+numpy
+openai

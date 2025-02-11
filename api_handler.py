@@ -8,7 +8,7 @@ class APIHandler:
     def __init__(self):
         self.client = None
         self.api_key = None
-        self.model = "gpt-4-vision-preview"  # Use the correct model for vision tasks
+        self.model = "gpt-4o-mini"
 
     def set_api_key(self, api_key):
         self.api_key = api_key
@@ -33,22 +33,15 @@ class APIHandler:
         buffered = io.BytesIO()
         image.save(buffered, format="PNG")
         img_str = base64.b64encode(buffered.getvalue()).decode()
-
+        
         try:
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[
                     {
-                        "role": "system",
-                        "content": "You follow the instructions to a T. You dont reply with anything else except for what is asked of you. When asked to write code you write full production code with no further explenations or filler."
-                    },
-                    {
                         "role": "user",
                         "content": [
-                            {
-                                "type": "text",
-                                "text": query
-                            },
+                            {"type": "text", "text": query},
                             {
                                 "type": "image_url",
                                 "image_url": {

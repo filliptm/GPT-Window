@@ -1,7 +1,19 @@
-PyQt5
-mss
-pillow
-aiohttp
-pyinstaller
-numpy
-openai
+# Core GUI
+PyQt5>=5.15.0
+
+# Image/Screenshot
+mss>=6.1.0
+Pillow>=10.0.0
+numpy>=1.21.0
+
+# API
+openai>=1.0.0
+aiohttp>=3.8.0
+tenacity>=8.0.0
+
+# Video Processing
+moviepy>=1.0.3
+opencv-python>=4.5.0
+
+# Build (optional)
+pyinstaller>=5.0.0
